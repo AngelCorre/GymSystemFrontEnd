@@ -1,0 +1,111 @@
+<main class="container mg-t20 col-md-6 offset-md-3">
+    
+    <h2 class="text-center">LogIn</h2>
+    
+    <form (ngSubmit)="LogIn()" #registerUsuario = "ngForm">
+        
+        <div class="form-group">
+            
+            <label>Nombre</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="name" 
+            name="name"
+            [(ngModel)]="usuario.name" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Nombre" 
+            #name = "ngModel" 
+            required>
+            
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                
+                <div *ngIf="name.errors.required">
+                    
+                    Digite un nombre valido
+                    
+                </div>
+                
+                <div *ngIf="name.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Email</label>
+            <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            name="email"
+            [(ngModel)]="usuario.email" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Email" 
+            #email = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                
+                <div *ngIf="email.errors.required">
+                    
+                    Digite un email valido
+                    
+                </div>
+                
+                <div *ngIf="email.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Password</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="password" 
+            name="password"
+            [(ngModel)]="usuario.password"
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Password" 
+            #password = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                
+                <div *ngIf="password.errors.required">
+                    
+                    Digite un password valido
+                    
+                </div>
+                
+                <div *ngIf="password.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <button class="btn btn-success" [disabled]="!registerUsuario.form.valid">LogIn</button>
+        
+    </form>
+    
+</main>
+

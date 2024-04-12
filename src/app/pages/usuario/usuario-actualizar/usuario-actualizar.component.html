@@ -1,0 +1,189 @@
+<main class="container mg-t20 col-md-6 offset-md-3">
+    
+    <h2 class="text-center">Actualizar Usuarios</h2>
+    
+    <form (ngSubmit)="OnSubmit()" #registerUsuario = "ngForm">
+        
+        <div class="form-group">
+            
+            <label>Nombre</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="name" 
+            name="name"
+            [(ngModel)]="usuario.name" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Nombre" 
+            #name = "ngModel" 
+            required>
+            
+            <div class="alert alert-danger" *ngIf="name.invalid && (name.dirty || name.touched)">
+                
+                <div *ngIf="name.errors.required">
+                    
+                    Digite un nombre valido
+                    
+                </div>
+                
+                <div *ngIf="name.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Email</label>
+            <input 
+            type="email" 
+            class="form-control" 
+            id="email" 
+            name="email"
+            [(ngModel)]="usuario.email" 
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Email" 
+            #email = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="email.invalid && (email.dirty || email.touched)">
+                
+                <div *ngIf="email.errors.required">
+                    
+                    Digite un email valido
+                    
+                </div>
+                
+                <div *ngIf="email.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Password</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="password" 
+            name="password"
+            [(ngModel)]="usuario.password"
+            minlength="4" 
+            maxlength="50" 
+            placeholder="Password" 
+            #password = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="password.invalid && (password.dirty || password.touched)">
+                
+                <div *ngIf="password.errors.required">
+                    
+                    Digite un password valido
+                    
+                </div>
+                
+                <div *ngIf="password.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+            
+            <label>BenchPress</label>
+            <input 
+            type="number" 
+            class="form-control" 
+            id="benchpress" 
+            name="benchpress"
+            [(ngModel)]="usuario.benchPress"
+            placeholder="BenchPress" 
+            #benchpress = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="benchpress.invalid && (benchpress.dirty || benchpress.touched)">
+                
+                <div *ngIf="benchpress.errors.required">
+                    
+                    Digite un benchpress valido
+                    
+                </div>
+                
+                <div *ngIf="benchpress.errors.minlength">
+                    
+                    Digite al menos 4 digitos
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Squat</label>
+            <input 
+            type="number" 
+            class="form-control" 
+            id="squat" 
+            name="squat"
+            [(ngModel)]="usuario.squat"
+            placeholder="Squat" 
+            #squat = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="squat.invalid && (squat.dirty || squat.touched)">
+                
+                <div *ngIf="squat.errors.required">
+                    
+                    Digite un squat valido
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="form-group">
+            
+            <label>Deadlift</label>
+            <input 
+            type="number" 
+            class="form-control" 
+            id="deadlift" 
+            name="deadlift"
+            [(ngModel)]="usuario.deadlift"
+            placeholder="Deadlift" 
+            #deadlift = "ngModel" 
+            autocomplete="off" required>
+            
+            <div class="alert alert-danger" *ngIf="deadlift.invalid && (deadlift.dirty || deadlift.touched)">
+                
+                <div *ngIf="deadlift.errors.required">
+                    
+                    Digite un deadlift valido
+                    
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <button class="btn btn-success" [disabled]="!registerUsuario.form.valid">Guardar</button>
+        
+    </form>
+    
+</main>
+

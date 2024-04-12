@@ -1,0 +1,37 @@
+<mat-toolbar color="warn">
+    <a
+    [routerLink]="''"
+    mat-icon-button
+    class="example-icon"
+    arial-label="Example icon-button with menu icon"
+    >
+    <mat-icon>fitness_center</mat-icon>
+</a>
+<span>GymRank</span>
+<span class="example-spacer"></span>
+
+<button [routerLink]="'usuarioLogin'" mat-icon-button class="example-icon" aria-label="Example icon-button with person icon">
+    <mat-icon>person</mat-icon>
+</button>
+
+</mat-toolbar>
+
+
+<mat-drawer-container style="background-image: url(../assets/The\ Batman\ Logo.jpg); background-repeat: no-repeat; background-size: cover; height: 100%; width: 100%;" >
+    <mat-drawer #drawer opened="true" mode="side" position="start">
+        <mat-nav-list>
+            <mat-list-item routerLink="">
+                <button routerLink="" mat-button><mat-icon>home</mat-icon> Home</button>
+            </mat-list-item>
+            <mat-list-item routerLink="usuariosLista">
+                <button routerLink="usuariosLista" mat-button><mat-icon>people</mat-icon>Usuarios</button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-drawer>
+    <mat-drawer-content>
+        <div class="container mg-20" style="min-height: 658px;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>
+

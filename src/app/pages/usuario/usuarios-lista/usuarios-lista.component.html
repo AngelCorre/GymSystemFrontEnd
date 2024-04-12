@@ -1,0 +1,59 @@
+<main class="container-all text-center">
+
+    <h2 class="mg-t20">Lista GymBros</h2>
+
+    <table class="table text-center">
+
+        <thead class="">
+    
+          <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>BenchPress</th>
+            <th>Squat</th>
+            <th>DeadLift</th>
+            <th>Acciones</th>
+          </tr>
+    
+        </thead>
+    
+        <tbody>
+    
+          <tr *ngFor="let usuario of usuarios">
+            <td>{{usuario.id}}</td>
+            <td>{{usuario.name}}</td>
+            <td>{{usuario.benchPress}}</td>
+            <td>{{usuario.squat}}</td>
+            <td>{{usuario.deadlift}}</td>
+            <td>
+
+
+                <button  (click)="updateUsuario(usuario.id)" mat-fab color="primary" aria-label="Example icon button with a autorenew icon">
+                    <mat-icon>autorenew</mat-icon>
+                </button>
+
+                <button  class="mg-r15 mg-l15" (click)="deleteUsuario(usuario.id)" mat-fab color="warn" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+
+                <button  (click)="detailsUsuario(usuario.id)" mat-fab color="accent" aria-label="Example icon button with a info icon">
+                    <mat-icon>info</mat-icon>
+                </button>
+    
+            </td>
+          </tr>
+    
+        </tbody>
+    
+      </table>
+
+      <div class="text-center mg-t20" >
+
+        <button (click)="saveUsuario()" mat-fab color="Basic" aria-label="Example icon button with a account_circle icon">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+
+      </div>
+
+
+    </main>
