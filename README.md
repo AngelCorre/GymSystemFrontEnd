@@ -1,6 +1,6 @@
 # SistemaGymFrontEnd
 
-![](https://github.com/AngelCorre/GymSystemFrontEnd/blob/master/cap-system.png)
+![](https://github.com/AngelCorre/Portfolio/blob/master/src/assets/gymrank.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
 
